@@ -1,6 +1,7 @@
 package net.kosev.roborazzidemo.ui.home
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
@@ -41,6 +42,11 @@ class HomeViewModel : ViewModel() {
                 )
             }
         }
+    }
+
+    @VisibleForTesting
+    internal fun setStateForTesting(state: HomeState) {
+        _state.update { state }
     }
 }
 
